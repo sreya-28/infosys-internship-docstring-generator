@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Python Docstring Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Automated Python Docstring Generator</h1>
+        <p>Generate Python AST </p>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <h2>Welcome Developer!</h2>
+            <p>Upload Python file or paste code to generate beautiful AST visualization</p>
+        </section>
+
+        <section class="input-section">
+            <div class="upload-zone">
+                <input type="file" id="fileInput" accept=".py" hidden>
+                <button class="action-btn file-btn" onclick="triggerFile()">
+                    📁 Choose Python File
+                </button>
+                <div id="fileInfo" class="file-info">No file selected</div>
+            </div>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <div class="code-zone">
+                <textarea id="codeInput" placeholder="Paste your Python code here...&#10;def hello(name: str) -> str:&#10;    return f'Hello {name}!'"></textarea>
+            </div>
+
+            <button class="action-btn primary generate-btn" onclick="generateAST()">
+                ✨ Generate AST
+            </button>
+        </section>
+
+        <section class="output-section" id="outputSection" style="display: none;">
+            <div class="output-header">
+                <h3>AST Output</h3>
+                <button class="copy-btn" onclick="copyAST()">📋 Copy</button>
+            </div>
+            <pre id="resultArea">Your AST will appear here...</pre>
+        </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

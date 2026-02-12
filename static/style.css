@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0b1957 0%, #d2b3db 50%, #a890d3 100%);
+    color: #fff;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #0b1957, #1e3a8a);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(11, 25, 87, 0.5);
+    /* Removed sticky positioning so header scrolls up with page */
+}
+
+header h1 {
+    font-family: 'Fira Code', monospace;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #fff, #d2b3db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+header p {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+.welcome h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.welcome p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Input Section */
+.input-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.upload-zone {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.action-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.file-btn {
+    background: linear-gradient(135deg, #d2b3db, #c4a3d8);
+    color: #0b1957;
+    margin-bottom: 0.5rem;
+}
+
+.primary {
+    background: linear-gradient(135deg, #0b1957, #1e3a8a);
+    color: white;
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.1rem;
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.primary:hover {
+    background: linear-gradient(135deg, #1e3a8a, #0b1957);
+}
+
+.file-info {
+    color: #fff !important;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.divider {
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    display: inline-block;
+    width: 100px;
+    height: 1px;
+    background: rgb(255, 255, 255);
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.code-zone textarea {
+    width: 100%;
+    min-height: 160px;
+    border: none;
+    border-radius: 12px;
+    padding: 1.2rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    resize: vertical;
+    background: rgba(255, 255, 255, 0.95);
+    color: #1a1a1a;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Output Section */
+.output-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.output-header h3 {
+    font-family: 'Fira Code', monospace;
+    font-weight: 600;
+}
+
+.copy-btn {
+    padding: 0.5rem 1rem;
+    background: #d2b3db;
+    color: #0b1957;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: #fff;
+    transform: translateY(-1px);
+}
+
+pre {
+    background: #1a1a1a;
+    color: #d2b3db;
+    padding: 1.5rem;
+    border-radius: 12px;
+    font-family: 'Fira Code', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-height: 500px;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .input-section, .output-section {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    header {
+        padding: 1.5rem 1rem;
+    }
+    
+    .output-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+}
